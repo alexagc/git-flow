@@ -1,15 +1,7 @@
-FROM alpine:3.7
+FROM debian:jessie-slim
 
 LABEL maintainer="alexcanal@gmail.com"
 
-RUN apk add --no-cache git curl util-linux
-
-RUN curl -OL https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
-
-RUN chmod +x gitflow-installer.sh
-
-RUN sh gitflow-installer.sh
-
-RUN rm -rf gitflow-installer.sh
+RUN apt-get update && apt-get install -y git git-flow && apt-get clean
 
 CMD [ "git-flow" ]
