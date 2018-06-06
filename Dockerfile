@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 LABEL maintainer="alexcanal@gmail.com"
 
-RUN apk add --no-cache git curl
+RUN apk add --no-cache git curl util-linux
 
 RUN curl -OL https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
 
